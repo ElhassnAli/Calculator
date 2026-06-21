@@ -65,26 +65,25 @@ function App() {
   const [themeNum, setThemeNum] = useState(1);
   function calc() {
     if (firstValue === "" || operation === "" || currentValue === "") return;
+
+    let result = 0;
+    const first = parseFloat(firstValue);
+    const current = parseFloat(currentValue);
     if (operation === "+") {
-      setCurrentValue(parseFloat(firstValue) + parseFloat(currentValue));
-      setFirstValue("");
-      setOperation("");
+      result = first + current;
     }
     if (operation === "-") {
-      setCurrentValue(parseFloat(firstValue) - parseFloat(currentValue));
-      setFirstValue("");
-      setOperation("");
+      result = first - current;
     }
     if (operation === "/") {
-      setCurrentValue(parseFloat(firstValue) / parseFloat(currentValue));
-      setFirstValue("");
-      setOperation("");
+      result = first / current;
     }
     if (operation === "×") {
-      setCurrentValue(parseFloat(firstValue) * parseFloat(currentValue));
-      setFirstValue("");
-      setOperation("");
+      result = first * current;
     }
+    setCurrentValue(result.toString());
+    setFirstValue("");
+    setOperation("");
   }
 
   function reset() {
