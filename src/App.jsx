@@ -67,15 +67,23 @@ function App() {
     if (firstValue === "" || operation === "" || currentValue === "") return;
     if (operation === "+") {
       setCurrentValue(parseFloat(firstValue) + parseFloat(currentValue));
+      setFirstValue("");
+      setOperation("");
     }
     if (operation === "-") {
       setCurrentValue(parseFloat(firstValue) - parseFloat(currentValue));
+      setFirstValue("");
+      setOperation("");
     }
     if (operation === "/") {
       setCurrentValue(parseFloat(firstValue) / parseFloat(currentValue));
+      setFirstValue("");
+      setOperation("");
     }
     if (operation === "×") {
       setCurrentValue(parseFloat(firstValue) * parseFloat(currentValue));
+      setFirstValue("");
+      setOperation("");
     }
   }
 
